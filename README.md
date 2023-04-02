@@ -1,5 +1,5 @@
 
-# A node js starter code with MVC stucture. 
+# A node js + Prisma starter code with MVC stucture. 
 
 A code template to get quick started with node js, express js and mongodb. It has error handling an database middleware ready to use. 
 
