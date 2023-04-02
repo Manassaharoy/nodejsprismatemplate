@@ -1,11 +1,12 @@
 
 # A node js + Prisma starter code with MVC stucture. 
 
-A code template to get quick started with node js, express js and mongodb. It has error handling an database middleware ready to use. 
+A code template to get quick started with node js, express js and prisma (SQL database ORM). It has error handling an database middleware ready to use. 
 
 # Features 
 
 - MVC structure
+- prisma ORM
 - response middleware to make the response sending structure same for all api point.
 - error handling middleware with enum HTTP error codes
 - monitor app by visiting url: /status
