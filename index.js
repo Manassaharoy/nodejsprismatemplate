@@ -2,23 +2,22 @@
 const express = require("express");
 const app = express();
 
+//? Environment veriable initialization
+const dotenv = require("dotenv");
+dotenv.config();
+
+// //! Prisma
+// const { PrismaClient } = require("@prisma/client");
+// const prisma = new PrismaClient();
+
 //? Routes import
 const firstRoute = require("./routes/firstRoute.js");
-const courseRoute = require("./routes/courseRoute");
+const userRoute = require("./routes/userRoute.js");
 
 //? Additional imports
 const { errorMiddleware } = require("./middlewares/error.js");
-const connectToDatabase = require("./config/connection.js");
-
-//? Environment veriable initialization
-const dotenv = require("dotenv");
-
 const { coloredLog } = require("./utils/coloredLog.js");
 const { responseMiddleware } = require("./middlewares/sendResponse.js");
-dotenv.config();
-
-//? Database connection
-connectToDatabase(process.env.DATABASE_URL);
 
 //? Express server monitor
 app.use(require("express-status-monitor")());
@@ -26,9 +25,7 @@ app.use(express.json());
 
 //? API points
 app.use("/", firstRoute);
-app.use("/courses", courseRoute);
-
-
+app.use("/user", userRoute);
 
 app.use(responseMiddleware);
 app.use(errorMiddleware);

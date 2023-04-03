@@ -22,6 +22,7 @@ Install packages
 ```
 change the followings in .env file before running the program.
 - DATABASE_URL : "URL string of databse"
+- ```npx prisma migrate dev --name init``` or ```npx prisma migrate``` to migrate database
 
 ### Run 
 

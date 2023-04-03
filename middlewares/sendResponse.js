@@ -2,10 +2,10 @@ const { coloredLog } = require("../utils/coloredLog");
 
 const responseMiddleware = (req, res, next) => {
 
-  
+  const { response } = res.locals.sendData
 
   res.json({
-    sent: req.locals.myData,
+    sent: response,
   });
 };
 

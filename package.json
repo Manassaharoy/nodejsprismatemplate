@@ -1,7 +1,7 @@
 {
-  "name": "startercodenodejs",
+  "name": "prismastarternodejs",
   "version": "1.0.0",
-  "description": "A starter code template for Node.js and Express with encryption, error handling, and response middleware.",
+  "description": "A starter code template for Node.js and Express with prisma ORM, error handling, and response middleware.",
   "main": "index.js",
   "type": "commonjs",
   "scripts": {
@@ -10,18 +10,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Manassaharoy/nodejsstater.git"
+    "url": "https://github.com/Manassaharoy/nodejsprismatemplate"
   },
   "keywords": [
     "node",
     "express",
     "starter code",
     "template",
-    "encryption",
     "error handling",
-    "middleware"
+    "middleware",
+    "prisma"
   ],
-  "homepage": "https://github.com/Manassaharoy/nodejsstater#readme",
+  "homepage": "https://github.com/Manassaharoy/nodejsprismatemplate#readme",
   "engines": {
     "node": ">=12.0.0",
     "npm": ">=6.0.0"
@@ -33,12 +33,18 @@
   },
   "license": "ISC",
   "dependencies": {
+    "@prisma/client": "^4.12.0",
     "chalk": "^4.1.2",
     "crypto-js": "^4.1.1",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
-    "express-status-monitor": "^1.3.4",
-    "mongoose": "^7.0.1",
-    "nodemon": "^2.0.21"
+    "express-status-monitor": "^1.3.4"
+  },
+  "devDependencies": {
+    "@types/node": "^18.15.11",
+    "nodemon": "^2.0.22",
+    "prisma": "^4.12.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.3"
   }
 }

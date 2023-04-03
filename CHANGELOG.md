@@ -3,5 +3,5 @@
 ## [1.0.0]
 
 ### First upload
-- response, error handling middleware 
+- response, error handling middleware, Prisma added
 
