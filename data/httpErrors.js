@@ -26,7 +26,7 @@ const HttpErrors = {
   503: {
     code: 503,
     message: "Service Unavailable",
-  },
+  }
 };
 
 module.exports = HttpErrors;

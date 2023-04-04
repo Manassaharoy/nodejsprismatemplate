@@ -1,10 +1,20 @@
 const tryCatchMiddleware = require("../middlewares/tryCatch.js");
 const { ErrorHandler } = require("../utils/errorHandler.js");
+const { coloredLog } = require("../utils/coloredLog.js");
 
 //! Prisma
 const { PrismaClient } = require("@prisma/client");
-const { coloredLog } = require("../utils/coloredLog.js");
+const { apiResponse } = require("../helper/apiResponse.js");
 const prisma = new PrismaClient();
+
+prisma
+  .$connect()
+  .then(() => {
+    coloredLog("Prisma is on", 5)
+  })
+  .catch((error) => {
+    coloredLog(["Prisma Error!!!", error.message], 6)
+  });
 
 // to throw error =>  return next(new ErrorHandler(message, statusCode));
 
@@ -48,8 +58,10 @@ const deleteUser = tryCatchMiddleware(async (req, res, next) => {
     },
   });
 
+  const response = apiResponse(true,200)
+
   res.locals.sendData = {
-    response: user,
+    response: response,
   };
   next();
 });

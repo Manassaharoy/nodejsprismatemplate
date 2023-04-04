@@ -4,9 +4,7 @@ const responseMiddleware = (req, res, next) => {
 
   const { response } = res.locals.sendData
 
-  res.json({
-    sent: response,
-  });
+  res.json(response);
 };
 
 module.exports = { responseMiddleware };
