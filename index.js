@@ -2,13 +2,13 @@
 const express = require("express");
 const app = express();
 
+const swaggerJsdoc = require("swagger-jsdoc");
+const swaggerUi = require("swagger-ui-express");
+const swaggerOptions = require("./utils/swaggerOptions.js");
+
 //? Environment veriable initialization
 const dotenv = require("dotenv");
 dotenv.config();
-
-// //! Prisma
-// const { PrismaClient } = require("@prisma/client");
-// const prisma = new PrismaClient();
 
 //? Routes import
 const firstRoute = require("./routes/firstRoute.js");
@@ -18,6 +18,10 @@ const userRoute = require("./routes/userRoute.js");
 const { errorMiddleware } = require("./middlewares/error.js");
 const { coloredLog } = require("./utils/coloredLog.js");
 const { responseMiddleware } = require("./middlewares/sendResponse.js");
+
+const specs = swaggerJsdoc(swaggerOptions);
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(specs));
+
 
 //? Express server monitor
 app.use(require("express-status-monitor")());

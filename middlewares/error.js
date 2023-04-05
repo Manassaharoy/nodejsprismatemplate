@@ -1,5 +1,5 @@
 const HttpErrors = require("../data/httpErrors.js"); // assuming your enum file is named HttpStatusEnum.js
-const { apiResponse } = require("../helper/apiResponse.js");
+const { apiResponse } = require("../utils/apiResponse.js");
 const { coloredLog } = require("../utils/coloredLog.js");
 
 function errorMiddleware(err, req, res, next) {

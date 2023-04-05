@@ -1,8 +1,8 @@
-function apiResponse(success, successCode, error = null) {
+function apiResponse(success, data, error = null) {
     if (success) {
       return {
         success: true,
-        successCode: successCode,
+        data: data,
         isError: false,
         error: {
           code: null,
@@ -12,7 +12,7 @@ function apiResponse(success, successCode, error = null) {
     } else {
       return {
         success: false,
-        successCode: null,
+        data: null,
         isError: true,
         error: {
           code: error.code || null,
