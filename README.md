@@ -11,8 +11,8 @@ A code template to get quick started with node js, express js and prisma (SQL da
 - error handling middleware with enum HTTP error codes
 - monitor app by visiting url: /status
 - a colorful console log function
-- express server monitoring
-- api documentation
+- express server monitoring at /status
+- api documentation available at /api-docs
 
 
 ## Script run sequence
